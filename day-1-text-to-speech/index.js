@@ -4,7 +4,6 @@ const speechbtn = document.querySelector('.submit')
 
 let synth = speechSynthesis
 let isSpeaking = true
-console.log("Hi 1")
 
 function voicespeech(){
     for(let voice of synth.getVoices()){
@@ -19,7 +18,6 @@ synth.addEventListener('voiceschanged', voicespeech)
 
 function texttospeech(text) {
     let utternance = new SpeechSynthesisUtterance(text)
-    console.log("Hi utter")
     for (let voice of synth.getVoices()){
         if (voice.name === voicelist.value){
             utternance.voice = voice
@@ -30,7 +28,6 @@ function texttospeech(text) {
 
 speechbtn.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log("Hi btn")
     if(textarea.value !== ''){
         console.log(textarea.value)
         if(!synth.speaking){
