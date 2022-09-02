@@ -14,7 +14,7 @@ function moveLeft(){
 
 function moveRight(){
     var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"))
-    if(left < 360){
+    if(left < 380){
         character.style.left = left + 2 + "px"
     }
 }
@@ -48,8 +48,8 @@ var blocks = setInterval(function(){
         var hole = document.createElement("div")
         block.setAttribute("class", "block")
         hole.setAttribute("class", "hole")
-        block.setAttribute("class", "block"+counter)
-        hole.setAttribute("class", "hole"+counter)
+        block.setAttribute("id", "block"+counter)
+        hole.setAttribute("id", "hole"+counter)
         block.style.top = blockLastTop + 60 + "px"
         hole.style.top = holeLastTop + 60 + "px"
         var random = Math.floor(Math.random() * 360)
